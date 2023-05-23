@@ -1,0 +1,98 @@
+body{
+    background: #F3F5FC;
+}
+
+#logo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 40px;
+}
+aside{
+    
+    position: absolute;
+}
+section{
+    float: left;
+}
+footer{
+    width: 100%;
+}
+
+#texto{
+    margin: auto;
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+}
+.row{
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+}
+.response-content{
+    width: 20%;
+    border-radius: 15%;
+    background-color: #fff;
+}
+.response{
+    padding: 1rem;
+}
+.response textarea{
+    width: 100%;
+    text-transform: lowercase;
+}
+.response img{
+    max-width: 100%;
+}
+.text-content{
+    width: 80%;
+    display: inline-block;
+    text-align: center;
+}
+.buttons{
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    gap: 24px;
+}
+
+footer label{
+    padding: 0 1rem;
+}
+
+#encriptar{
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    background: #0A3871;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+#encriptar:hover, #desencriptar:hover{
+    cursor: pointer;
+}
+#desencriptar{
+    padding: 24px;
+    gap: 8px;
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #0A3871;
+    background: #D8DFE8;
+}
