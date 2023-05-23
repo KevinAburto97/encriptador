@@ -11,26 +11,31 @@
     <header id="logo">
         <img src="./img/Vector.png" alt="Logo">
     </header>
-    <section class="text-content">
-        <div class="text">
-            <label> Ingrese su texto aquí:</label>
-            <input type="text" id="texto">
-        </div>
-    </section>
-    <section class="response-content">
-        <div class="response">
-            <textarea id="showResponse" rows="12" autocapitalize="none"></textarea>
-            <!-- <img src="./img/Muñeco.png" alt="muñeco"> -->
-        </div>
-    </section>
+    <main>
+        <section class="text-content">
+            <div class="text">
+                <label> Ingrese su texto aquí:</label>
+                <input type="text" id="texto">
+            </div>
+        </section>
+        <section class="response-content">
+            <div class="response">
+                <textarea id="showResponse" rows="20" autocapitalize="none"></textarea>
+            </div>
+            <div id="contentNotFound">
+                <img id="notFound" src="./img/Muñeco.png" alt="muñeco">
+                <p>Ningún mensaje fue encontrado</p>
+            </div>
+            <button type="button" id="copy">Copiar</button>
+        </section>
+    </main>
     <footer>
         <label>Solo letras minisculas y sin acentos.</label>
         <div class="buttons">
-            <button id="encriptar">Encriptar</button>
-            <button id="desencriptar">Desencriptar</button>
+            <button type="button" id="encriptar">Encriptar</button>
+            <button type="button" id="desencriptar">Desencriptar</button>
         </div>
     </footer>
+    <script src="./js/script.js"></script>
 </body>
 </html>
-
-<script src="./js/script.js"></script>

@@ -3,21 +3,13 @@ body{
 }
 
 #logo{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: block;
     padding: 24px;
-    gap: 40px;
 }
-aside{
-    
-    position: absolute;
-}
-section{
-    float: left;
-}
-footer{
-    width: 100%;
+
+main{
+    display: flex;
+    flex-direction: row;
 }
 
 #texto{
@@ -36,7 +28,7 @@ footer{
 }
 .response-content{
     width: 20%;
-    border-radius: 15%;
+    border-radius: 5%;
     background-color: #fff;
 }
 .response{
@@ -45,9 +37,18 @@ footer{
 .response textarea{
     width: 100%;
     text-transform: lowercase;
+    border: none;
 }
-.response img{
+#contentNotFound{
+    display: none;
+}
+#contentNotFound img{
     max-width: 100%;
+}
+#contentNotFound p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
 }
 .text-content{
     width: 80%;
@@ -61,38 +62,44 @@ footer{
     gap: 24px;
 }
 
+#copy{
+    display: none;
+}
+
 footer label{
     padding: 0 1rem;
 }
 
-#encriptar{
+#copy, #encriptar, #desencriptar{
     padding: 24px;
     gap: 8px;
     width: 328px;
     height: 67px;
-    background: #0A3871;
     border-radius: 24px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
+}
+
+#copy{
+    max-width: 100%;
+    padding: 0;
+    height: 46px;
+    background: #138D75;
+    color: #FFFFFF;
+    border: none;
+}
+
+#encriptar{
+    background: #0A3871;
     color: #FFFFFF;
 }
-#encriptar:hover, #desencriptar:hover{
+#encriptar:hover, #desencriptar:hover, #copy:hover{
     cursor: pointer;
 }
 #desencriptar{
-    padding: 24px;
-    gap: 8px;
-    width: 328px;
-    height: 67px;
-    border-radius: 24px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
     color: #0A3871;
     background: #D8DFE8;
 }
