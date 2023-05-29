@@ -11,21 +11,41 @@ var btnEncriptar = document.getElementById("encriptar"),
     showResponse = document.getElementById("showResponse"),
     inputTexto = document.getElementById("texto"),
     copy = document.getElementById("copy"),
-    contentNotFound = document.getElementById("contentNotFound");
+    contentNotFound = document.getElementById("contentNotFound"),
+    iconError = document.getElementById("error"),
+    snackbar = document.getElementById("snackbar");
 
-inputTexto.addEventListener('keyup', function(){
+inputTexto.addEventListener('keyup', function(key){
     let texto = this.value
+    if(texto != ""){
+        if(validateText(texto)){
+            iconError.style.display = "none";
+            btnEncriptar.removeAttribute("disabled");
+            btnDesencriptar.removeAttribute("disabled");
+        }
+        else{
+            iconError.style.display = "block";
+            btnEncriptar.disabled = "true";
+            btnDesencriptar.disabled = "true";
+        } 
+    }
+
     inputTexto.value = texto.toLowerCase();
 })
 
 copy.addEventListener('click', function(){
     showResponse.select();
     document.execCommand("copy");
+    snackbar.innerHTML = "Texto copiado!";
+    snackbar.className = "show";
+    setTimeout(function(){
+        snackbar.className = snackbar.className.replace("show", "");
+    }, 3000);
 })
 
 btnEncriptar.addEventListener('click', function(){
     let texto = document.getElementById("texto").value,
-        response = "";
+        response = "";    
     if(texto != ""){
         for(letra of texto){
             response += encriptar(letra);
@@ -49,6 +69,11 @@ btnDesencriptar.addEventListener('click', function(){
         showNotFound();
     }
 })
+
+function validateText(texto){
+    let patron = /^[a-zA-Z\s]+$/;
+    return patron.test(texto);
+}
 
 function hideNotFound(){
     copy.style.display = "block";

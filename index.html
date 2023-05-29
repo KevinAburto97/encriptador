@@ -10,17 +10,19 @@
 <body>
     <header id="logo">
         <img src="./img/Vector.png" alt="Logo">
+        <div id="snackbar"></div>
     </header>
     <main>
         <section class="text-content">
             <div class="text">
                 <label> Ingrese su texto aquí:</label>
-                <input type="text" id="texto">
+                <textarea id="texto" cols="40" rows="5"></textarea>
+                <p id="error"><i class="icon-error"></i>Se encontró un carácter no permitido!</p>
             </div>
         </section>
         <section class="response-content">
             <div class="response">
-                <textarea id="showResponse" rows="20" autocapitalize="none"></textarea>
+                <textarea id="showResponse" rows="20" autocapitalize="none" readonly></textarea>
             </div>
             <div id="contentNotFound">
                 <img id="notFound" src="./img/Muñeco.png" alt="muñeco">
@@ -30,7 +32,7 @@
         </section>
     </main>
     <footer>
-        <label>Solo letras minisculas y sin acentos.</label>
+        <label><i class="icon-info"></i>Solo letras minisculas y sin acentos.</label>
         <div class="buttons">
             <button type="button" id="encriptar">Encriptar</button>
             <button type="button" id="desencriptar">Desencriptar</button>

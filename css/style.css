@@ -7,12 +7,45 @@ body{
     padding: 24px;
 }
 
+#snackbar{
+    visibility: hidden;
+    min-width: 250px; 
+    background-color: #138D75;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.3rem;
+    padding: 20px; 
+    position: fixed; 
+    z-index: 1; 
+    right: 2rem; 
+    top: 30px; 
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
 main{
     display: flex;
     flex-direction: row;
 }
 
-#texto{
+.text textarea{
+    text-transform: lowercase;
+    border: none;
+    resize: none;
     margin: auto;
     display: block;
     font-style: normal;
@@ -20,7 +53,29 @@ main{
     font-size: 32px;
     line-height: 150%;
     color: #0A3871;
+    background: #f7fbfb;
 }
+.text label{
+    color: #0A3871;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.text #error{
+    display: none;
+    text-align: end;
+    margin-right: 1rem;
+}
+
+.icon-error{
+    display: inline-block;
+    background: url('../img/advertencia.png') no-repeat top left;
+    width: 16px;
+    height: 16px;
+    margin: 0px 0.5rem;
+}
+
 .row{
     display: inline-block;
     padding: 1rem 1rem;
@@ -38,6 +93,7 @@ main{
     width: 100%;
     text-transform: lowercase;
     border: none;
+    resize: none;
 }
 #contentNotFound{
     display: none;
@@ -69,6 +125,13 @@ main{
 footer label{
     padding: 0 1rem;
 }
+footer .icon-info{
+    display: inline-block;
+    background: url('../img/info.png') no-repeat top left;
+    width: 16px;
+    height: 16px;
+    margin: 0px 0.5rem;
+}
 
 #copy, #encriptar, #desencriptar{
     padding: 24px;
@@ -81,6 +144,7 @@ footer label{
     font-size: 16px;
     line-height: 19px;
     text-align: center;
+    border: none;
 }
 
 #copy{
@@ -98,8 +162,14 @@ footer label{
 }
 #encriptar:hover, #desencriptar:hover, #copy:hover{
     cursor: pointer;
+    opacity: 0.5;
 }
 #desencriptar{
     color: #0A3871;
     background: #D8DFE8;
+}
+
+button:disabled,
+button[disabled]{
+    cursor: not-allowed !important;
 }
